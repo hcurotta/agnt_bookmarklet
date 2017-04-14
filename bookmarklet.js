@@ -22,10 +22,10 @@
   
   function initBookmarklet() {
     (window.Bookmarklet = function() {
-
-      
-      debugger
-
+      $.get("https://rawgit.com/hcurotta/agnt_bookmarklet/master/index.html", function(data){
+        $('body').prepend("<div id='agnt_pane'></div>")
+        $('#agnt_pane').html(data);
+      });
     })(); 
   }
 
